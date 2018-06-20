@@ -34,7 +34,7 @@ Commitground stores data not only on the ethereum network but also the additiona
 
 > **Directory structure of common git project**
 >
-> Generally, a git project has a following directory structure.
+> Generally, a git project has the following directory structure.
 >
 >```bash
 >.git
@@ -49,7 +49,7 @@ Commitground stores data not only on the ethereum network but also the additiona
 >└── refs
 >```
 >
-> Here, in the *objects* directory, source codes are stored being distributed and categorized by commit hash values. We write all the data except the *objects* directory on the ethereum network. First, it is too expensive to write all the source code data. Second, it is cryptologically safe to compare the hash values because git creates the hash using the previous commit's hash, author information, and also date information. Finally, in case of an open source project, by the existence of many clones, it is easy to detect the forgery, and in case of a private project, it is protected on the protocol level.
+> Here, in the *objects* directory, source codes are stored being distributed and categorized by commit hash values. We write all the data except the *objects* directory on the ethereum network. First, it is too expensive to write all the source code data. Second, although without the all source code data, comparing hash values is enough to check that a cloned git project is identical with the one on the ethereum. It is cryptologically safe because git creates the hash using the previous commit's hash, author information, and also date information. Finally, in case of an open source project, by the existence of many clones, it is easy to detect the forgery, and in case of a private project, it is protected on the protocol level.
 
 You can choose the repository services among the followings,
 
@@ -67,3 +67,78 @@ You can choose the repository services among the followings,
 
    [Starts with a github repository]()(link should be updated)
    [Starts with a gitlab repository]()(link should be updated)
+
+
+
+#### Registering an issue
+
+You can register an issue to collaborate with others.
+
+```javascript
+client.registerIssue({
+    registrar: "Address of registrar's account", // e.g) 0xh1298h
+    project: "Address of project", // e.g) 0xjjjp12
+    contents: "String or Object"
+})
+```
+
+##### registrar
+
+The address of issue registrar's account.
+
+##### project
+
+The address of project to register the issue
+
+##### contents
+
+ String or JSON type contents.
+
+
+
+#### Offering rewards for solutions
+
+When if an issue is remarkably important, we can offer rewards to encourage contributors make solutions.
+
+```javascript
+client.offerReward({
+    targetIssue: "Address of target issue",
+    gerritiums: "Amount of gerritiums to offer", // default: 0
+    gerritrons: "Amount of gerritrons to offer", // default: 0
+    provider: "Address of offer provider's account",
+    contents: "Critical bug during registration process",
+    type: "Soft" | "Hard" // default: Soft
+})
+```
+
+##### targetIssue
+
+The address of issue to reserve rewards
+
+##### gerritiums
+
+The amount of Gerritiums to give as a reward
+
+##### gerritrons
+
+The amount of Gerritrons to give as a reward
+
+>Gerritium vs Gerritron?
+>
+>[Gerritron](#Gerritron) acts like an empowered "Star" in github. You can extract Gerritrons from Gerritiums and then, use them to upvote or downvote activities on commitground. You can also exchange the received Gerritrons to Gerritiums at the market in commitground.
+>
+> By the Gerritium token economy, it is an implementation of evaluation by the community to upvote or downvote activities using Gerritrons. This behavior mainly works as the key reward ecosystem for open source projects and also the key factor to decide the amount of new issuance of Gerritium.
+>
+> On the other hand, offering Gerritiums as rewards can be considered as the evaluation by the market. This makes the contributor eco system work effectively with the capitals. Thus, this is suitable for commercial projects which can be grown up rapidly being accelerated by capitals.
+
+##### provider
+
+The address of wallet to withdraw Gerritiums for the reward. The target issue holds withdrawn Gerritiums and Gerritrons.
+
+##### contents
+
+You can add a message.
+
+##### rule
+
+When you close an issue, there can be different kind of solutions. And also there might be many kinds of way to share the rewards. So you can select the rule for your issue reward.
