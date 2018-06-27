@@ -18,11 +18,11 @@
 
 ## 기여에 대한 가치평가
 
-기여에 대한 가치평가는 두 가지로 나뉘어집니다. 그것은 그 기여를 원하는 사람이 누구냐에 따라서 달라집니다. 
+기여에 대한 가치평가는 두 가지로 나뉘어집니다. 그것은 그 기여를 원하는 사람이 누구냐에 따라서 달라집니다.
 
 첫 번째는 **커뮤니티에 의한 가치평가** 입니다. 예를 들어, 웹사이트를 개발하는 개발자가 있습니다. 이러한 개발자에게 컨텐츠를 작성하면 자동으로 아름다운 웹사이트로 변환해주는 Jekyll과 같은 오픈소스 라이브러리는 축복과도 같습니다. 만약에 웹 어플리케이션으로서의 기능이 필요할 때에는 ReactJS라는 축복이 존재합니다. 여기서 이미 "축복"이라는 단어에 두 라이브러리들에 대한 가치 평가를 엿볼 수 있습니다. 이처럼 오픈소스 프로젝트들은 프로젝트 자체 뿐 아니라 세부적인 기여 행위들에 대해서도 오픈소스 커뮤니티의 구성원들로부터 평가와 피드백을 받습니다.
 
-두 번째는 **시장에 의한 가치평가**입니다. 예를 들어, 지금 당장 웹사이트를 만들고 싶은 **의뢰자**에게는 "주어진 컨텐츠로 웹사이트를 제작하여 인터넷에서 접속가능하도록 배포하기"라는 기여행위를 필요로 합니다. 따라서 의뢰자는 위 기여행위를 제공한 **기여자**에게 해당 기여행위가 의뢰자 본인에게 얼마나 필요한지 (수요)에 따라 보상을 지불할 의사가 있을 것입니다. 
+두 번째는 **시장에 의한 가치평가**입니다. 예를 들어, 지금 당장 웹사이트를 만들고 싶은 **의뢰자**에게는 "주어진 컨텐츠로 웹사이트를 제작하여 인터넷에서 접속가능하도록 배포하기"라는 기여행위를 필요로 합니다. 따라서 의뢰자는 위 기여행위를 제공한 **기여자**에게 해당 기여행위가 의뢰자 본인에게 얼마나 필요한지 (수요)에 따라 보상을 지불할 의사가 있을 것입니다.
 
 그래서 우리는, **커뮤니티에 의한 가치평가**를 구현하기 위하여 Gerritium 화폐와 그 채굴시스템인 Plant System을 제공합니다. 이것은 인센티브가 존재하는 오픈소스 커뮤니티이며, 이를 통해 다양한 구성원들로부터 좋은 평가를 많이 받을수록 큰 가치를 인정받을 수 있습니다. '이 때 어뷰징을 통한 평가는 가치로서 인정받지 못합니다.'
 
@@ -60,11 +60,11 @@ General SW Project는 우리가 흔히 github 등의 개발플랫폼에서 볼 �
 
 ##### name
 
-프로젝트 이름은 영문, 숫자 그리고 '-', '_', '.'에 해당하는 문자를 사용할 수 있습니다. 
+프로젝트 이름은 영문, 숫자 그리고 '-', '_', '.'에 해당하는 문자를 사용할 수 있습니다.
 
 ##### repository
 
-Commitground 프로젝트는 두 곳에 데이터를 저장하는데, 첫 번째는 바로 이더리움네트워크이고 두 번째는 별도의 저장소입니다. 이 때 이더리움네트워크에는 프로젝트의 커밋트리 해쉬값들이 저장되는데, 이 값은 별도 저장소에서 서비스되는 소스코드가 원본이 맞는지 확인합니다. 별도의 저장소는 사용자가 자유롭게 지정할 수 있습니다. 
+Commitground 프로젝트는 두 곳에 데이터를 저장하는데, 첫 번째는 바로 이더리움네트워크이고 두 번째는 별도의 저장소입니다. 이 때 이더리움네트워크에는 프로젝트의 커밋트리 해쉬값들이 저장되는데, 이 값은 별도 저장소에서 서비스되는 소스코드가 원본이 맞는지 확인합니다. 별도의 저장소는 사용자가 자유롭게 지정할 수 있습니다.
 
 >**Git 프로젝트의 데이터 구성.**
 >
@@ -83,7 +83,7 @@ Commitground 프로젝트는 두 곳에 데이터를 저장하는데, 첫 번째
 >└── refs
 >```
 >
->이 중, objects폴더에는 커밋 별로 hash값을 기준으로 소스코드 파일이 분할 저장되어 있습니다. 여기에서 블록체인에는 objects폴더를 제외한 파일들이 기록되는데, 그 이유는 다음과 같습니다. 첫 째, 소스코드의 내용을 전부 블록체인에 기록할 경우 비용 낭비가 심합니다. 그리고 Git system은 각 commit마다 변경사항의 hash값, 그리고 이전 commit의 hash값, 작성자 정보와 작성일자를 토대로 hash되어 그 값을 저장하기 때문에 commit tree를 저장하는 것만으로도 외부 저장소에 별도로 저장된 소스코드가 실제 blockchain에 기록된 기여 내용과 일치하는 지 확인할 수 있습니다. 마지막으로 모두에게 공개된 오픈소스의 경우 사람들이 소스코드의 원본을 각각의 저장소에 clone하여 보관하는 경우가 많아 위변조를 탐지하는 것이 쉽고, 비공개 소스코드의 경우에는 위변조 위협을 소스코드 저장소 관리 차원에서 방어할 수 있습니다. 
+>이 중, objects폴더에는 커밋 별로 hash값을 기준으로 소스코드 파일이 분할 저장되어 있습니다. 여기에서 블록체인에는 objects폴더를 제외한 파일들이 기록되는데, 그 이유는 다음과 같습니다. 첫 째, 소스코드의 내용을 전부 블록체인에 기록할 경우 비용 낭비가 심합니다. 그리고 Git system은 각 commit마다 소스코드 전부의 hash값, 그리고 이전 commit의 hash값, 작성자 정보와 작성일자를 토대로 체크섬을 만들어 그 값을 저장하기 때문에 commit tree를 저장하는 것만으로도 외부 저장소에 별도로 저장된 소스코드가 실제 blockchain에 기록된 기여 내용과 일치하는 지 확인할 수 있습니다. 마지막으로 모두에게 공개된 오픈소스의 경우 사람들이 소스코드의 원본을 각각의 저장소에 clone하여 보관하는 경우가 많아 위변조를 탐지하는 것이 쉽고, 비공개 소스코드의 경우에는 위변조 위협을 소스코드 저장소 관리 차원에서 방어할 수 있습니다. 
 
 소스코드를 서비스할 저장소는 다음과 같은 방식 중에서 선택할 수 있습니다.
 
@@ -97,7 +97,7 @@ Commitground 프로젝트는 두 곳에 데이터를 저장하는데, 첫 번째
 
 3. 3rd Parties
 
-   Github나 Gitlab 등의 3rd party 어플리케이션을 사용해 소스코드를 서빙할 수 있습니다. 이 경우 기여에 의한 보상을 받기 위해서는 플러그인과 확장 프로그램을 설치하는 작업이 필요합니다. 
+   Github나 Gitlab 등의 3rd party 어플리케이션을 사용해 소스코드를 서빙할 수 있습니다. 이 경우 기여에 의한 보상을 받기 위해서는 플러그인과 확장 프로그램을 설치하는 작업이 필요합니다.
 
    [github와 연동하기 바로가기]()(링크 업데이트 필요)
 
@@ -131,7 +131,7 @@ String 혹은 JSON형태로, UI에서 표현되는 컨텐츠 내용을 담고 �
 
 
 
-#### 이슈 해결에 보상 제공하기 
+#### 이슈 해결에 보상 제공하기
 
 우리는, 이슈가 정말 중요할 경우, 해당 이슈에 보상을 제공하여 보다 빨리 해결되도록 촉진할 수 있습니다.
 
@@ -152,15 +152,15 @@ client.offerReward({
 
 ##### gerritiums
 
-보상으로 주고자 하는 Gerritium의 양을 의미합니다. 
+보상으로 주고자 하는 Gerritium의 양을 의미합니다.
 
 ##### gerritrons
 
-보상으로 주고자 하는 Gerritron의 양을 의미합니다. 
+보상으로 주고자 하는 Gerritron의 양을 의미합니다.
 
 >Gerritium vs Gerritron?
 >
->[Gerritron](#Gerritron)이란, Github에서의 Star와 같은 역할을 하는 것으로, Gerritium에서 추출할 수 있습니다. 단, Gerritium에서 Gerritron을 추출했을 때 해당 Gerritium은 한동안 거래할 수 없는 잠김 상태가 됩니다. 수신한 Gerritron을 모아서 Gerritium으로 교환할 수 있는데, 이 때 교환가능한 Gerritium은 모은 Gerritron들 발신자들의 명성에 영향을 받습니다. 
+>[Gerritron](#Gerritron)이란, Github에서의 Star와 같은 역할을 하는 것으로, Gerritium에서 추출할 수 있습니다. 단, Gerritium에서 Gerritron을 추출했을 때 해당 Gerritium은 한동안 거래할 수 없는 잠김 상태가 됩니다. 수신한 Gerritron을 모아서 Gerritium으로 교환할 수 있는데, 이 때 교환가능한 Gerritium은 모은 Gerritron들 발신자들의 명성에 영향을 받습니다.
 >
 >Gerritium의 생태계에 따르면 Gerritron을 주고 받는 행위는 **구성원들에 의한 가치평가**에 속하는 것으로, Gerritium의 발행량을 결정하는 중요 메커니즘입니다. 이는 주로 오픈소스 프로젝트에 필요한 보상 생태계를 구성합니다.
 >
@@ -202,7 +202,7 @@ client.registerTestCase({
 
 ##### testScript
 
-프로젝트 내 테스트 스트립트의 경로입니다. yml 형식으로 작성되어 있습니다. 
+프로젝트 내 테스트 스트립트의 경로입니다. yml 형식으로 작성되어 있습니다.
 
 [How to write test script 바로가기]()(링크업데이트필)
 
@@ -210,7 +210,7 @@ client.registerTestCase({
 
 #### 이슈 해결 선언하기
 
-이슈를 해결하고자 하면, 기존에 이미 이슈해결을 시작한 사람과 협업해서 이어갈 것인지 혹은 독자적인 솔루션을 제안할 것인지 결정해야 합니다. 
+이슈를 해결하고자 하면, 기존에 이미 이슈해결을 시작한 사람과 협업해서 이어갈 것인지 혹은 독자적인 솔루션을 제안할 것인지 결정해야 합니다.
 
 ```javascript
 client.resolveIssue({
@@ -236,7 +236,7 @@ client.resolveIssue({
 
 #### Pull Request 작성하기
 
-이슈 해결을 선언하여 브랜치를 만들고 나면, 해당 브랜치에는 쓰기 권한이 있습니다. 개발을 진행하여 브랜치가 이슈를 해결하는 상태가 되었다면 이슈 해결을 완료했다는 의미로, 혹은 중간 완료나 소규모 변경을 위하여 Pull Request를 작성하게 됩니다. 이 Pull Request를 이슈 생성자가 승인할 경우 `issue-13/solution` branch에 병합되게 됩니다. 
+이슈 해결을 선언하여 브랜치를 만들고 나면, 해당 브랜치에는 쓰기 권한이 있습니다. 개발을 진행하여 브랜치가 이슈를 해결하는 상태가 되었다면 이슈 해결을 완료했다는 의미로, 혹은 중간 완료나 소규모 변경을 위하여 Pull Request를 작성하게 됩니다. 이 Pull Request를 이슈 생성자가 승인할 경우 `issue-13/solution` branch에 병합되게 됩니다.
 
 ```javascript
 client.pullRequest({
@@ -254,7 +254,7 @@ Pull Request를 작성한 계정의 주소값입니다.
 
 ##### target
 
-Pull request의 target에는 3가지 종류가 있습니다. 
+Pull request의 target에는 3가지 종류가 있습니다.
 
 1. Issue
 
@@ -280,7 +280,7 @@ Merge를 요청할 커밋헤드를 의미합니다.
 
 #### Solution 선택하기
 
-다양한 사람들이 Solution을 제안하여 충분하게 이슈가 해결된 경우에는, 이슈를 등록한 사람이 솔루션을 선택하고 이슈를 종결할 수 있습니다. 
+다양한 사람들이 Solution을 제안하여 충분하게 이슈가 해결된 경우에는, 이슈를 등록한 사람이 솔루션을 선택하고 이슈를 종결할 수 있습니다.
 
 ```javascript
 client.closeIssue({
@@ -343,7 +343,7 @@ Upvote할 Activity의 Id입니다.
 
 #### 수신한 Gerritron을 화폐로 교환하기
 
-커뮤니티 기여를 통해 수취한 Gerritron들은 교환소를 통해 Gerritium으로 교환할 수 있습니다. 이 때 교환가치의 단위는 GQ로 표시하는데, 다양한 사람들에게 Gerritron을 받을수록 교환 가치는 높아집니다. 또한 이미 다양한 사람들에게 Gerritron을 수신한 경험이 있는 사람들로부터 Gerritron을 수신했을 때 교환가치가 더욱 높아집니다. 예를 들어 한 사람에게 100개의 Gerritron을 수신했을 때 100 GQ의 교환가치가 있다면, 두 사람으로부터 각각 50씩 받아 100개의 Gerritron을 수신했을 때는 150 GQ의 교환가치가 될 수 있습니다. 1 GQ 당 몇 개의 Gerritium을 받을 수 있는지는 교환소에서 Plant(채굴자)와의 거래 시세에 따라 달라집니다. 
+커뮤니티 기여를 통해 수취한 Gerritron들은 교환소를 통해 Gerritium으로 교환할 수 있습니다. 이 때 교환가치의 단위는 GQ로 표시하는데, 다양한 사람들에게 Gerritron을 받을수록 교환 가치는 높아집니다. 또한 이미 다양한 사람들에게 Gerritron을 수신한 경험이 있는 사람들로부터 Gerritron을 수신했을 때 교환가치가 더욱 높아집니다. 예를 들어 한 사람에게 100개의 Gerritron을 수신했을 때 100 GQ의 교환가치가 있다면, 두 사람으로부터 각각 50씩 받아 100개의 Gerritron을 수신했을 때는 150 GQ의 교환가치가 될 수 있습니다. 1 GQ 당 몇 개의 Gerritium을 받을 수 있는지는 교환소에서 Plant(채굴자)와의 거래 시세에 따라 달라집니다.
 
 
 
@@ -351,7 +351,7 @@ Upvote할 Activity의 Id입니다.
 
 GPT(Gerritium Project Token)란 ERC20에서 확장된 토큰 형태로, DApp을 Commitground를 사용하여 개발할 때 해당 DApp에서 사용할 토큰을 GPT로 발행할 수 있습니다. GPT로 토큰을 발행할 경우 commitground 내에서의 ICO를 거쳐 프로젝트에 펀드를 유치할 수 있습니다. 또한 기여에 대한 가치평가 시스템에 따라서 기여자들은 프로젝트가 유치한 펀드로부터 보상을 받아 급여처럼 활용할 수 있으며, 프로젝트가 발급할 GPT형태의 토큰 또한 보상받아 스톡옵션처럼 보유할 수 있습니다. 이 시스템은 Gerrit Code Review로부터 영감을 받았으며 TDD(Test Driven Development)에 충실한 애자일 프로젝트 개발 기법을 활용하는 것을 바탕으로 만들어졌습니다.
 
-이 시스템은 통해 우리는 
+이 시스템은 통해 우리는
 
 1. 지속적 개발과 지속적 펀딩: CD-CF (Continuous Development and Continuous Funding)
 2. 사기(Scam)위험성의 감소
@@ -369,7 +369,7 @@ GPT(Gerritium Project Token)란 ERC20에서 확장된 토큰 형태로, DApp을 
 2. 한 투자자가 해당 아이디어와 계획을 검토한 결과 유망하다고 판단하여, 보유한 Gerritium을 사용해서 XTO를 새로 발급해갔습니다. 이 때 투자자는 ICO에 가장 먼저 참여하였으므로 가장 큰 수익을 기대할 수 있습니다.
 3. 투자자가 펀딩한 것을 전 세계의 여러 개발자들이 확인하였습니다. 이제 보상을 받을 수 있기 때문에 많은 개발자들이 프로젝트에 기여한 뒤 보상을 획득해 갑니다. 개발자들은 보상으로 Gerritium과 XTO를 모두 받아가게 되는데, Gerritium은 바로 월급처럼 사용하여 생활을 유지하는 것에 사용할 수 있습니다. 하지만 XTO는 아직 거래가 불가능하므로(프로젝트가 Unlock 되어야 거래 가능), 스톡옵션처럼 가치를 올리는 것에 집중합니다.
 4. 프로젝트가 활발하게 개발되는 것을 확인한 투자자들은 추가적인 투자를 진행하고, 펀드와 개발이 지속적으로 이루어지는 것을 확인한 개발자들은 프로젝트에 지속적으로 참가하여 기여한 뒤 보상을 받아갑니다.
-5. 개발이 완료되자 프로젝트 위원회는 프로젝트를 배포하여 잠김상태를 해제하였습니다. 이에 따라 XTO가 거래가능한 상태가 되고 Xber를 사용하겠다는 사람들이 기존의 토큰보유자들에게 토큰을 구매해갑니다. 
+5. 개발이 완료되자 프로젝트 위원회는 프로젝트를 배포하여 잠김상태를 해제하였습니다. 이에 따라 XTO가 거래가능한 상태가 되고 Xber를 사용하겠다는 사람들이 기존의 토큰보유자들에게 토큰을 구매해갑니다.
 6. Uber를 블록체인으로 대체하여 더 저렴한 서비스를 제공하는 XBer가 성공적으로 마무리되고 이에 기여한 개발자들과 투자자들은 충분한 보상을 받아갑니다.
 
 ![](https://s3.ap-northeast-2.amazonaws.com/my-publics/how-it-works.png)
@@ -401,7 +401,7 @@ GPT(Gerritium Project Token)란 ERC20에서 확장된 토큰 형태로, DApp을 
 
 #### Project 시작 후 Governance 설정하기
 
-GPT App project를 시작하기 위해서는 Project를 어떤 방법으로 관리할 것인지 설정해야 합니다. Project 관리체계에는 다음 세 가지가 있습니다. 
+GPT App project를 시작하기 위해서는 Project를 어떤 방법으로 관리할 것인지 설정해야 합니다. Project 관리체계에는 다음 세 가지가 있습니다.
 
 1. 위원회 시스템
 
@@ -449,7 +449,7 @@ project.setGovernance(myGovernance.getAddress())
    1. Driver 용 Client (10,000 Gerritium)
    2. Passenger 용 Client (10,000 Gerritium)
 
-   
+
 
 #### Raising Funds(ICO)
 
@@ -583,7 +583,7 @@ Pull Request 코드리뷰에 대한 커멘트입니다.
 
 ##### details
 
-코드 라인별로 자세한 커멘트를 남길 수 있습니다. 
+코드 라인별로 자세한 커멘트를 남길 수 있습니다.
 
 ##### scores
 
@@ -596,7 +596,7 @@ Pull Request 코드리뷰에 대한 커멘트입니다.
 
 #### Build/Test/Deploy
 
- commitground는 TDD와 dev-ops를 유연하게 지원하는 것에 초점을 두고 있습니다. 따라서 Pull Request를 머지하는 과정에서 빌드-테스트-배포가 자동으로 이루어지도록 합니다. Commitground 플랫폼은 저장소 서비스와 마찬가지로 오픈소스의 경우에는 무료로 서비스를 제공하며 Private Project의 경우에는 유상으로 서비스를 제공합니다. 
+ commitground는 TDD와 dev-ops를 유연하게 지원하는 것에 초점을 두고 있습니다. 따라서 Pull Request를 머지하는 과정에서 빌드-테스트-배포가 자동으로 이루어지도록 합니다. Commitground 플랫폼은 저장소 서비스와 마찬가지로 오픈소스의 경우에는 무료로 서비스를 제공하며 Private Project의 경우에는 유상으로 서비스를 제공합니다.
 
 
 
@@ -606,9 +606,9 @@ Pull Request 코드리뷰에 대한 커멘트입니다.
 
 
 
-#### 3rd Party Integration 
+#### 3rd Party Integration
 
-commitground에서의 변경사항을 Webhook을 추가하는 것을 통해, 3rd party 어플리케이션과 통합할 수 있습니다. 
+commitground에서의 변경사항을 Webhook을 추가하는 것을 통해, 3rd party 어플리케이션과 통합할 수 있습니다.
 
 ```javascript
 project.addWebhook({
@@ -619,10 +619,10 @@ project.addWebhook({
 
 ##### topic
 
-webhook을 보내기 위한 topic입니다. 지원되는 topic은 
+webhook을 보내기 위한 topic입니다. 지원되는 topic은
 
 - pull-request
-- issue-registration 
+- issue-registration
 - 추가 요망
 
 등이 있습니다.
@@ -659,7 +659,7 @@ Gerritium은 Plant System을 통해 생산 및 데이터의 기록이 이루어�
 
 ### Physics & Token Economy
 
-Gerritium은 기본 화폐로 쓰이는 물질입니다. 그리고 기여를 인정해주기 위해서는 Gerritium에서 추출한 Gerritron을 사용합니다. 한 번 Gerritron을 추출하면 Gerritium은 Light Gerritium으로 전환되어 화폐로 사용하지 못하지만, 시간이 지나면 다시 Gerritium으로 복원됩니다. 사람들이 보내준 Gerritron을 모으면 거래소에 Gerritium을 받고 판매할 수 있습니다. 
+Gerritium은 기본 화폐로 쓰이는 물질입니다. 그리고 기여를 인정해주기 위해서는 Gerritium에서 추출한 Gerritron을 사용합니다. 한 번 Gerritron을 추출하면 Gerritium은 Light Gerritium으로 전환되어 화폐로 사용하지 못하지만, 시간이 지나면 다시 Gerritium으로 복원됩니다. 사람들이 보내준 Gerritron을 모으면 거래소에 Gerritium을 받고 판매할 수 있습니다.
 
 #### 핵심 명제
 
@@ -671,7 +671,7 @@ Gerritium은 기본 화폐로 쓰이는 물질입니다. 그리고 기여를 인
 
 4. 다양한 구성원으로부터 평가를 받아왔을 경우, 영향력이 강화됩니다.
 
-   
+
 
 
 #### 물질
@@ -738,7 +738,7 @@ Gerritium 커뮤니티에 새로 가입한 구성원은 Material Manager와 비�
 
 Plant 시스템을 사용할 경우, dapp client는 이더리움 노드일 필요가 없어집니다. dapp client가 커뮤니티에서 활동을 하였고 그 내역이 블록체인에 기록되기 위해서는 Plant 노드와 http 프로토콜로 통신할 수만 있으면 됩니다.
 
-예를 들어, User A가 commitground 프로젝트에 이슈를 등록했다는 활동을 이더리움 상에 기록해보도록 하겠습니다. 
+예를 들어, User A가 commitground 프로젝트에 이슈를 등록했다는 활동을 이더리움 상에 기록해보도록 하겠습니다.
 
 1. 해당 활동을 기록하기 위한 트랜잭션을 json abi에 의거하여 생성합니다. (예시로 작성된 것이므로, 디테일한 프로그램 설계시 업데이트 필요)
 
@@ -803,13 +803,13 @@ Plant 시스템을 사용할 경우, dapp client는 이더리움 노드일 필�
 
 $ price\ of\ gerritite = k \times  quality \times mass $
 
-위 수식에서 Gerritite를 판매하는 기본 단위는 $quality \cdot mass$가 입니다. $k$는 Plant를 운영하는 사람이 정하는 가격에 해당하는 수치로 $Gerritium / quality \cdot mass$ 의 단위를 가지고 있습니다. 이에 따라 Gerritite 거래소에서는 Plant의 수요와 구성원들의 공급이 만나는 곳에서 $k$가 조절되며 시장가격을 형성하게 됩니다. 
+위 수식에서 Gerritite를 판매하는 기본 단위는 $quality \cdot mass$가 입니다. $k$는 Plant를 운영하는 사람이 정하는 가격에 해당하는 수치로 $Gerritium / quality \cdot mass$ 의 단위를 가지고 있습니다. 이에 따라 Gerritite 거래소에서는 Plant의 수요와 구성원들의 공급이 만나는 곳에서 $k$가 조절되며 시장가격을 형성하게 됩니다.
 
 
 
 ##### ⑤ 핵융합 그리고 부산물
 
-Plant 운영자는 Gerritium을 생산하는 핵융합을 진행할 수 있습니다. 다만, 이를 위해서는 
+Plant 운영자는 Gerritium을 생산하는 핵융합을 진행할 수 있습니다. 다만, 이를 위해서는
 
 1. Rietveldium
 2. Gerritite
@@ -824,13 +824,13 @@ Plant 운영자는 Gerritium을 생산하는 핵융합을 진행할 수 있습�
 
 ##### ⑥ 핵분열과 부산물(Light Gerritium & Gerritron)
 
-Gerritium을 보유하고 있다면, 간단하게 Gerritium을 핵분열시켜 Gerritron 입자를 얻어낼 수 있습니다.이 과정을 Gerritium Fission이라고 합니다. 
+Gerritium을 보유하고 있다면, 간단하게 Gerritium을 핵분열시켜 Gerritron 입자를 얻어낼 수 있습니다.이 과정을 Gerritium Fission이라고 합니다.
 
 ![Gerritium Fission](https://s3.ap-northeast-2.amazonaws.com/my-publics/gerritium+fission.png)
 
 Gerritium Fission을 진행하면 Gerritium이 Light Gerritium 그리고 Gerritron으로 분열되는데, 산출물인 Light Gerritium 후술되는 Hyper Gerritron에 의한 자연핵융합으로 인해 시간이 지나면 다시 Gerritium으로 복원됩니다. Light Gerritium의 경우 따로 거래가 불가능하니 자산관점에서 보았을 때, Gerritium은 유동성을 잃었다 그 유동성을 시간에 따라 회복하는 과정을 거치게 됩니다.
 
-Gerritron을 얻는 과정에서 맨 처음에는 Material Manager가 단 한개의 고유한 회전축으로 밖에 Gerritron을 추출하지 못합니다.  하지만 Material Manager가 다른 구성원으로부터 Gerritron을 수신한다면, 수신한 Gerritron의 회전축으로도 Gerritron을 추출할 수 있는 확률이 발생하게 됩니다. 따라서 다양한 회전축의 Gerritron을 많이 수신할 수록 수신한 Gerritron의 회전축의 Gerritron을 생성하는 확률이 점점 증가합니다. 
+Gerritron을 얻는 과정에서 맨 처음에는 Material Manager가 단 한개의 고유한 회전축으로 밖에 Gerritron을 추출하지 못합니다.  하지만 Material Manager가 다른 구성원으로부터 Gerritron을 수신한다면, 수신한 Gerritron의 회전축으로도 Gerritron을 추출할 수 있는 확률이 발생하게 됩니다. 따라서 다양한 회전축의 Gerritron을 많이 수신할 수록 수신한 Gerritron의 회전축의 Gerritron을 생성하는 확률이 점점 증가합니다.
 
 
 
@@ -856,11 +856,11 @@ Gerritium Fission 과정을 통해 Gerritron을 추출할 때 Gerritron의 회�
 
 ##### ⑨ 고에너지 입자에 의한 자연 핵융합과 Gerritium 복원
 
-핵융합 부산물로 공간 중 떠도는 Hyper Gerritron은 다음과 같이 Light Gerritium들과 만나서 Gerritium으로 융합되고 이를 Light Gerritium Fusion이라고 합니다. 
+핵융합 부산물로 공간 중 떠도는 Hyper Gerritron은 다음과 같이 Light Gerritium들과 만나서 Gerritium으로 융합되고 이를 Light Gerritium Fusion이라고 합니다.
 
 ![light gerritium fusion by hyper gerritron](https://s3.ap-northeast-2.amazonaws.com/my-publics/light+gerritium+fusion+by+hyper+gerritron.png)
 
-Light Gerritium Fusion은 자연스럽게 이뤄지는 현상이며, 공간 내 Hyper Gerrition 농도인 pHG(potential of Hyper Gerritron)에 그 속도가 영향을 받습니다. 
+Light Gerritium Fusion은 자연스럽게 이뤄지는 현상이며, 공간 내 Hyper Gerrition 농도인 pHG(potential of Hyper Gerritron)에 그 속도가 영향을 받습니다.
 
 $fusion\ rate\ per\ minute \propto pHG$
 
@@ -881,14 +881,14 @@ Rietveldium 채굴 공식에 의하여 커뮤니티가 활성화될수록 Rietve
 
 
 
-또한 커뮤니티가 비활성화될수록 Rietveldium 공급이 늘어나는데, 
+또한 커뮤니티가 비활성화될수록 Rietveldium 공급이 늘어나는데,
 
 - Rietveldium 공급이 늘어나므로 Gerritite 수요가 많아지고 Gerritite 가격이 올라간다.
 - Rietveldium 공급량이 늘었으므로 핵융합 반응 총량이 늘어나고 HyperGerritron 농도가 높아진다.
 - HyperGerritron 농도가 높아졌으므로 LightGerritium->Gerritium 재전환이 빨라지고 이로 인해 Gerritron 추출 비용(Gerritium을 Light Gerritium으로 묶어놔야 하는 기회비용)이 낮아진다.
 - Gerritron 추출 비용이 낮아지고 Gerritium 발행량이 늘었으므로 Gerritium의 유동성이 증가한다. (양적완화)
 - Gerritium의 유동성이 증가하므로 커뮤니티에 신규유입되는 자본이 많아진다.
-- Gerritite 가격이 비싸졌으므로 커뮤니티에서 활동하려는 사람이 늘어나고 Gerritron 추출비용이 낮아졌으므로 더 활발한 활동이 이루어진다. 
+- Gerritite 가격이 비싸졌으므로 커뮤니티에서 활동하려는 사람이 늘어나고 Gerritron 추출비용이 낮아졌으므로 더 활발한 활동이 이루어진다.
 - 커뮤니티의 활동이 다시 활발해짐에 따라 Gerritite의 공급은 다시금 늘어나고 Gerritite의 가격은 안정세에 접어든다.
 
 즉, 커뮤니티가 비활성화되었을 때에는 양적완화를 통해 커뮤니티를 활력있게 만들게 됩니다.
@@ -966,7 +966,7 @@ Commitground플랫폼은 Commitground Foundation이 참가자들과 함께 만�
 3. 토큰 세일 전략
 
    1. 토큰의 최대 발행량: 1,000,000,000 개 (mining을 통해 모두 발행될 경우 재단에서 재조정)
-   2. 초기 토큰 발행 모델: Exponential 
+   2. 초기 토큰 발행 모델: Exponential
    3. 가격 증가 비율: 1.0000000206
    4. 시작 Valuation: $10M
    5. 종료 Valuation: $3.8 B
@@ -1040,4 +1040,3 @@ Commitground플랫폼은 Commitground Foundation이 참가자들과 함께 만�
 
 
 [^1]: Commitground에서 기여활동을 가치로 측정하는 주요 방법은 Gerrit Code Review에서 크게 영감을 얻었다. Gerrit Code Review는 Rietveld 프로젝트의 fork 프로젝트로, Commitground에 등장하는 주요 명칭인 Gerritron, Gerritium, Rietveldium은 이에 대한 오마주로 작성되었다.
-
