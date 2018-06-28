@@ -844,43 +844,16 @@ Commitground플랫폼은 Commitground Foundation이 참가자들과 함께 만�
 
 ![Token allocation](https://s3.ap-northeast-2.amazonaws.com/my-publics/gerritium-token-allocation.png)
 
-2.  향후 예측
+2. 토큰 세일 전략
 
-    향후 예측은 1. 얼마나 많은 IT industry가 블록체인 기반의 서비스로 대체될 것인가, 그리고 2. 그 중 얼마나 많은 프로젝트가 우리 플랫폼을 사용하여 개발될 것인가에 따라 달라집니다. 전체 Gerritium Project Token들의 시가총액이 Gerritium의 총 가치를 나타낸다는 가정 하에 다음과 같은 시나리오를 예상해볼 수 있습니다(2016, 2017년 [자료](https://en.wikipedia.org/wiki/List_of_largest_Internet_companies)에 의하면, 전세계 인터넷 회사들의 상위 25개 기업의 총 시가 총액의 합은 약 3813조 원이었습니다.)
+   1.  토큰의 최대 발행량: 1,000,000,000 개 (mining을 통해 모두 발행될 경우 재단에서 재조정)
+   2.  초기 토큰 발행 모델: Exponential
+   3.  가격 증가 비율: 1.0000000206
+   4.  시작 Valuation: $10M
+   5.  종료 Valuation: $3.8 B
 
-    -   기대하는 시나리오
+   ![Token Pricing](https://s3.ap-northeast-2.amazonaws.com/my-publics/commitground-token-pricing.png)
 
-        1.  블록체인 생태계가 현재 인터넷 기업의 10%를 대체하는 경우
-
-        2.  블록체인 생태계에서 개발되는 프로젝트의 10%가 커밋그라운드 플랫폼을 사용해 개발되는 경우
-
-            기대 시가 총액: 약 38조 원
-
-    -   최상의 시나리오
-
-        1.  블록체인 생태계가 현재 인터넷 기업의 20%를 대체하는 경우
-
-        2.  블록체인 생태계에서 개발되는 프로젝트의 50%가 커밋그라운드 플랫폼을 사용해 개발되는 경우
-
-            기대 시가 총액: 약 381조 원
-
-    -   최악의 시나리오
-
-        1.  블록체인 생태계가 현재 인터넷 기업의 1%를 대체하는 경우
-
-        2.  블록체인 생태계에서 개발되는 프로젝트의 1%가 커밋그라운드 플랫폼을 사용해 개발되는 경우
-
-            기대 시가 총액: 약 3813 억 원
-
-3.  토큰 세일 전략
-
-    1.  토큰의 최대 발행량: 1,000,000,000 개 (mining을 통해 모두 발행될 경우 재단에서 재조정)
-    2.  초기 토큰 발행 모델: Exponential
-    3.  가격 증가 비율: 1.0000000206
-    4.  시작 Valuation: $10M
-    5.  종료 Valuation: $3.8 B
-
-    ![Token Pricing](https://s3.ap-northeast-2.amazonaws.com/my-publics/commitground-token-pricing.png)
 
 #### Commitplay, inc.
 
